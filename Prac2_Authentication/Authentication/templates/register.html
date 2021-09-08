@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Register Page</title>
+{% endblock %}
+
+{% block content %}
+    <form method="POST" class="jumbotron" style="margin: 2% 30%;width: 40%;">
+        <h2 style="margin: 2% 2% 3% 2%;padding: 1%;text-align: center;">Member Registration Form....</h2>
+        {% csrf_token %}
+        {{form|crispy}}<br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Member Register</button>
+        <hr>
+        <div style="margin: 0% 30%;" ><h6>Member login? <a href="{% url 'register' %}">login Here...</a></h6></div>
+    </form>
+{% endblock %}  
